@@ -3,7 +3,7 @@ import { Header } from "./Header";
 
 export const Layout = () => {
   return (
-    <div>
+    <div className="bg-primary">
       <Header />
     </div>
   );
