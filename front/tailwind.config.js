@@ -8,7 +8,11 @@ export default {
       secondary: "#fdf4ff",
       text: "#9d174d",
     },
-    extend: {},
+    extend: {
+      fontFamily:{
+        'nunito':["Nunito", 'sans-serif']
+      }
+    },
   },
   plugins: [],
 };
