@@ -20,6 +20,7 @@ export const Header = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           className="cursor-pointer mr-0"
         >
+          
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
