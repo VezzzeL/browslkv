@@ -4,7 +4,6 @@ import { Navbar } from "./Navbar.jsx";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="flex flex-row bg-imp text-text z-2 font-nunito">
       <div className="flex flex-col items-center relative">
