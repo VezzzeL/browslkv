@@ -4,9 +4,10 @@ import { Navbar } from "./Navbar.jsx";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="flex flex-row bg-imp text-text z-2 font-nunito">
-      <div className="flex flex-col items-center relative">
+    <div className="flex flex-row bg-imp text-text z-2 font-nunito overflow-hidden">
+      <div className="flex-grow">
         <img
           src={getImageUrl("header/Browslkv_logo-main.png")}
           alt="logo"
@@ -14,7 +15,8 @@ export const Header = () => {
         />
         <h1 className="text-4xl font-bold mb-4">BROWS_LKV</h1>
       </div>
-      <div className="">
+
+      <div className="flex-shrink">
         <a
           onClick={() => setMenuOpen(!menuOpen)}
           className="cursor-pointer mr-0"
