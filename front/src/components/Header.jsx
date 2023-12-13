@@ -23,15 +23,34 @@ export const Header = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           className="cursor-pointer mr-0"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            fill="#f1eee7"
-            viewBox="0 0 256 256"
-          >
-            <path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"></path>
-          </svg>
+          {menuOpen ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fafafa"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <g id="SVGRepo_iconCarrier">
+                <path d="M11 12H3" /> <path d="M16 6H3" /> <path d="M16 18H3" />{" "}
+                <path d="M19 10l-4 4" /> <path d="M15 10l4 4" />{" "}
+              </g>
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="#f1eee7"
+              viewBox="0 0 256 256"
+            >
+              <path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"></path>
+            </svg>
+          )}
         </a>
         <div className="relative">{menuOpen && <Navbar />}</div>
       </div>
