@@ -6,9 +6,7 @@ export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div
-      className={`flex flex-row select-none bg-imp text-text z-2 font-nunito relative`}
-    >
+    <div className={`flex flex-row bg-imp text-text z-2 font-nunito relative`}>
       <div className="flex-grow flex-col mx-auto text-center">
         <img
           src={getImageUrl("header/Browslkv_logo-main.png")}
