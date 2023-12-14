@@ -6,18 +6,19 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "plugin:tailwind/recommended", // Add Tailwind CSS support
+    "plugin:tailwind/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
-  plugins: ["react-refresh", "tailwind"], // Add 'tailwind' plugin
+  plugins: ["react-refresh", "tailwind", "bem"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
     ],
-    "tailwind/class-order": "error", // Enforce Tailwind CSS class order
-    "tailwind/no-custom-classname": "error", // Disallow custom class names
+    "tailwind/class-order": "error",
+    "tailwind/no-custom-classname": "error",
+    "bem/naming": ["error", { preset: "kebab" }],
   },
 };
