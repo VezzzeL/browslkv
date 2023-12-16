@@ -1,0 +1,18 @@
+[
+  { "text": "Корекція брів", "price": "150 UAH", "img": "hero/Kate.jpg" },
+  {
+    "text": "Корекція та фарбування брів",
+    "price": "250 UAH",
+    "img": "hero/Kate.jpg"
+  },
+  {
+    "text": "Корекція та ламінування",
+    "price": "300 UAH",
+    "img": "hero/Kate.jpg"
+  },
+  {
+    "text": "Корекція, фарбування та ламінування брів",
+    "price": "350 UAH",
+    "img": "hero/Kate.jpg"
+  }
+]
