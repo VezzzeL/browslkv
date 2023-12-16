@@ -5,13 +5,13 @@ export default {
     colors: {
       imp: "#f9a8d4",
       primary: "#fce7f3",
-      secondary: "#fdf4ff",
+      secondary: "#f472b6",
       text: "#9d174d",
     },
     extend: {
-      fontFamily:{
-        'nunito':["Nunito", 'sans-serif']
-      }
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"],
+      },
     },
   },
   plugins: [],
