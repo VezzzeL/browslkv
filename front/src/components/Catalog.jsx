@@ -2,7 +2,7 @@ import React from "react";
 import { getImageUrl } from "../utils";
 import catalogItems from "../data/catalogItems.json";
 
-const Catalog = () => {
+export const Catalog = () => {
   return (
     <div className="text-text font-nunito">
       <div className="flex justify-center">
@@ -33,5 +33,3 @@ const Catalog = () => {
     </div>
   );
 };
-
-export default Catalog;
