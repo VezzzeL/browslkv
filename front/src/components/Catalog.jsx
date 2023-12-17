@@ -14,7 +14,7 @@ export const Catalog = () => {
                   <div className="flex justify-center mb-4">
                     <img
                       src={getImageUrl(item.img)}
-                      className="rounded-full object-cover w-24 h-24"
+                      className="rounded-full object-cover w-24 h-36"
                       alt={item.text}
                     />
                   </div>
