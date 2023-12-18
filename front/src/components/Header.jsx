@@ -15,7 +15,7 @@ export const Header = () => {
         />
         <h1 className="text-4xl font-bold">BROWS_LKV</h1>
       </div>
-      <div className="flex-shrink my-16 mr-8">
+      <div className="flex-shrink my-16 mr-8 z-20">
         <a
           onClick={() => setMenuOpen(!menuOpen)}
           className="cursor-pointer mr-0"
