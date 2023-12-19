@@ -10,7 +10,7 @@ export const Catalog = () => {
           {catalogItems.map((item, index) => (
             <div key={index} className="m-1">
               <label className="block h-full w-full">
-                <div className="rounded-xl h-full w-64 bg-secondary p-2 shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <div className="rounded-xl h-full w-64 bg-imp p-2 shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
                   <div className="flex justify-center mb-1">
                     <img
                       src={getImageUrl(item.img)}

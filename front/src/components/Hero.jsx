@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <div className="grid grid-cols-2 gap-4 text-text bg-imp mt-2 font-nunito rounded-2xl">
       <div className="col-span-2 bg-gray-100 p-6 shadow-md">
-        <div className="flex flex-col md:flex-row items-center md:items-start">
+        <div className="flex flex-col md:flex-row justify-center items-center md:items-start">
           <img
             src={getImageUrl("hero/Kate.jpg")}
             alt="hero"
