@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-assets/
+front/src/assets
+api/node_modules
+api/.env
