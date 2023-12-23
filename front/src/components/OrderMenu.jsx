@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export const OrderMenu = () => {
   const [name, setName] = useState("");
@@ -7,10 +8,22 @@ export const OrderMenu = () => {
   const [selectedTime, setSelectedTime] = useState("");
   const [instagram, setInstagram] = useState("");
 
-  const createOrder = (e) => {
+  const createOrder = async (e) => {
     e.preventDefault();
+    const orderData = {
+      clientName: name,
+      phone: telephone,
+      visitDate: selectedDate,
+      slots: [{ time: selectedTime, available: true }],
+      instagram,
+    };
+    try {
+      const response = await axios.post("/orders", orderData);
+      console.log("Order created successfully", response.data);
+    } catch (error) {
+      console.error("Error creating order", error);
+    }
   };
-
   const timeSlots = [
     "10:00",
     "11:30",
