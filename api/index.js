@@ -40,7 +40,6 @@ app.get("/orders/:id", async (req, res) => {
   }
 });
 
-
 app.post("/orders", async (req, res) => {
   const order = new Order({
     clientName: req.body.clientName,
