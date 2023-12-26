@@ -24,6 +24,7 @@ export const OrderMenu = () => {
       console.error("Error creating order", error);
     }
   };
+
   const timeSlots = [
     "10:00",
     "11:30",
