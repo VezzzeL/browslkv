@@ -54,6 +54,7 @@ export const OrderMenu = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
+
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="telephone">
             Телефон
