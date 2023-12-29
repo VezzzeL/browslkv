@@ -15,10 +15,6 @@ app.use(
 
 mongoose.connect(process.env.MONGO_URL);
 
-app.get("/test", (req, res) => {
-  res.json("ok");
-});
-
 app.get("/orders", async (req, res) => {
   try {
     const orders = await Order.find();
@@ -44,6 +40,7 @@ app.post("/orders", async (req, res) => {
   const order = new Order({
     clientName: req.body.clientName,
     phone: req.body.phone,
+    service: req.body.service,
     visitDate: req.body.visitDate,
     slots: req.body.slots,
     instagram: req.body.instagram,

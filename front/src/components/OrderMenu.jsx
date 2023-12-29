@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { OrderDetails } from "./OrderDetails";
+import catalogItems from "../data/catalogItems.json";
 
 export const OrderMenu = ({ onSubmit }) => {
   const [name, setName] = useState("");
   const [telephone, setTelephone] = useState("");
+  const [selectedService, setSelectedService] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
   const [instagram, setInstagram] = useState("");
@@ -21,6 +23,7 @@ export const OrderMenu = ({ onSubmit }) => {
     const orderData = {
       clientName: name,
       phone: telephone,
+      service: selectedService,
       visitDate: selectedDate,
       slots: [{ time: selectedTime, available: true }],
       instagram,
@@ -30,7 +33,7 @@ export const OrderMenu = ({ onSubmit }) => {
       const response = await axios.post("/orders", orderData);
       console.log("Order created successfully", response.data);
       setDateError("");
-      onSubmit(); // Notify the parent component
+      onSubmit();
     } catch (error) {
       console.error("Error creating order", error);
     }
@@ -77,6 +80,26 @@ export const OrderMenu = ({ onSubmit }) => {
             placeholder="0991112233"
             onChange={(e) => setTelephone(e.target.value)}
           />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2" htmlFor="service">
+            Послуга
+          </label>
+          <select
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="service"
+            value={selectedService}
+            onChange={(e) => setSelectedService(e.target.value)}
+          >
+            <option value="" disabled>
+              Виберіть послугу
+            </option>
+            {catalogItems.map((item) => (
+              <option key={item.text} value={item.text}>
+                {item.text} - {item.price}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="date">

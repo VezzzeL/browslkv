@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const OrderSchema = mongoose.Schema({
   clientName: { type: String, required: true },
   phone: { type: Number, required: true },
+  service: { type: String, required: true },
   visitDate: { type: Date, required: true },
   slots: [
     {
