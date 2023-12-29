@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { OrderDetails } from "./OrderDetails";
 
-export const OrderMenu = () => {
+export const OrderMenu = ({ onSubmit }) => {
   const [name, setName] = useState("");
   const [telephone, setTelephone] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
   const [instagram, setInstagram] = useState("");
+  const [dateError, setDateError] = useState("");
 
   const createOrder = async (e) => {
     e.preventDefault();
+    const today = new Date().toISOString().split("T")[0];
+    if (selectedDate < today) {
+      setDateError("Дата повинна бути сьогодні, або в майбутньому");
+      return;
+    }
+
     const orderData = {
       clientName: name,
       phone: telephone,
@@ -17,9 +25,12 @@ export const OrderMenu = () => {
       slots: [{ time: selectedTime, available: true }],
       instagram,
     };
+
     try {
       const response = await axios.post("/orders", orderData);
       console.log("Order created successfully", response.data);
+      setDateError("");
+      onSubmit(); // Notify the parent component
     } catch (error) {
       console.error("Error creating order", error);
     }
@@ -54,7 +65,6 @@ export const OrderMenu = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="telephone">
             Телефон
@@ -73,12 +83,20 @@ export const OrderMenu = () => {
             Дата запису
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            className={`shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline ${
+              dateError && "border-red-500"
+            }`}
             id="date"
             type="date"
             value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
+            onChange={(e) => {
+              setSelectedDate(e.target.value);
+              setDateError("");
+            }}
           />
+          {dateError && (
+            <p className="text-red-500 text-xs italic">{dateError}</p>
+          )}
         </div>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="time">

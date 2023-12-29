@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { OrderMenu } from "./OrderMenu";
+import { OrderDetails } from "./OrderDetails";
 
 export const Order = () => {
   const [orderMenuOpen, setOrderMenuOpen] = useState(false);
+  const [orderSubmitted, setOrderSubmitted] = useState(false);
+
+  const handleOrderSubmit = () => {
+    setOrderSubmitted(true);
+  };
+
   return (
     <div className="flex flex-col text-text font-bold">
       <div className="flex justify-center">
@@ -13,7 +20,11 @@ export const Order = () => {
           Записатись
         </button>
       </div>
-      {orderMenuOpen && <OrderMenu />}
+      {orderMenuOpen && !orderSubmitted && (
+        <OrderMenu onSubmit={handleOrderSubmit} />
+      )}
+      {orderSubmitted && <OrderDetails />}{" "}
+      {/* Render OrderDetails component when order is submitted */}
     </div>
   );
 };
