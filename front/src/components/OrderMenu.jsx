@@ -101,6 +101,7 @@ export const OrderMenu = ({ onSubmit }) => {
             ))}
           </select>
         </div>
+
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="date">
             Дата запису
