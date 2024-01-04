@@ -19,7 +19,6 @@ export const OrderMenu = ({ onSubmit }) => {
       setDateError("Дата повинна бути сьогодні, або в майбутньому");
       return;
     }
-
     const orderData = {
       clientName: name,
       phone: telephone,
@@ -28,7 +27,7 @@ export const OrderMenu = ({ onSubmit }) => {
       slots: [{ time: selectedTime, available: true }],
       instagram,
     };
-    
+
     try {
       const response = await axios.post("/orders", orderData);
       console.log("Order created successfully", response.data);
