@@ -19,6 +19,7 @@ export const OrderMenu = ({ onSubmit }) => {
       setDateError("Дата повинна бути сьогодні, або в майбутньому");
       return;
     }
+
     const orderData = {
       clientName: name,
       phone: telephone,
