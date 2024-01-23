@@ -5,7 +5,6 @@ import { OrderDetails } from "./OrderDetails";
 export const Order = () => {
   const [orderMenuOpen, setOrderMenuOpen] = useState(false);
   const [orderSubmitted, setOrderSubmitted] = useState(false);
-
   const handleOrderSubmit = () => {
     setOrderSubmitted(true);
   };
