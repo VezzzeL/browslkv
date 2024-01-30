@@ -9,6 +9,7 @@ export const Order = () => {
     setOrderSubmitted(true);
   };
 
+
   return (
     <div className="flex flex-col text-text font-bold">
       <div className="flex justify-center">
@@ -23,7 +24,7 @@ export const Order = () => {
         <OrderMenu onSubmit={handleOrderSubmit} />
       )}
       {orderSubmitted && <OrderDetails />}{" "}
-      {/*  Render OrderDetails component when order is submitted  */}
+      {/*  Render OrderDetails component  when order is submitted  */}
     </div>
   );
 };
