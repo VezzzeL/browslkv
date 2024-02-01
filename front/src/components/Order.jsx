@@ -23,7 +23,7 @@ export const Order = () => {
         <OrderMenu onSubmit={handleOrderSubmit} />
       )}
       {orderSubmitted && <OrderDetails />}{" "}
-      {/*  Render OrderDetails component when order is submitted  */}
+      {/*  Render OrderDetails component when order is submitted */}
     </div>
   );
 };
